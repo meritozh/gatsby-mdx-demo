@@ -5,14 +5,16 @@
  */
 
 const {createFilePath} = require(`gatsby-source-filesystem`);
-const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
+const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
 const path = require(`path`)
 
 module.exports = {
   onCreateNode: ({node, getNode, actions}) => {
     const {createNodeField} = actions;
     if (node.internal.type === `Mdx`) {
-      const slug = createFilePath({node, getNode, basePath: `pages`});
+      let slug = createFilePath({node, getNode, basePath: `pages`});
+      // utils/new.ts will create xxx/post.mdx file, remove the `post/`.
+      slug = slug.substr(0, slug.length - 5);
       createNodeField({node, name: `slug`, value: slug});
     }
   },
@@ -28,9 +30,6 @@ module.exports = {
                 fields {
                   slug
                 }
-                code {
-                  scope
-                }
               }
             }
           }
@@ -39,13 +38,8 @@ module.exports = {
         result.data.allMdx.edges.forEach(
             ({node}) => {createPage({
               path: node.fields.slug,
-              component: componentWithMDXScope(
-                path.resolve(`./src/templates/post.tsx`),
-                node.code.scope
-              ),
-              context: {
-                slug: node.fields.slug
-              }
+              component: path.resolve(`./src/templates/post.tsx`),
+              context: {slug: node.fields.slug}
             })})
         resolve();
       });
