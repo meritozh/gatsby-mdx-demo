@@ -4,4 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require("prismjs/themes/prism-solarizedlight.css")
+import 'prismjs/themes/prism-solarizedlight.css'
+
+import { wrapRootElement as wrap } from './src/utils/wrap-root-element'
+
+export const wrapRootElement = wrap

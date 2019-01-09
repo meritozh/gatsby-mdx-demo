@@ -17,10 +17,9 @@ module.exports = {
         //   posts: require.resolve("./src/templates/post.tsx")
         // },
         gatsbyRemarkPlugins: [
-          { resolve: `gatsby-remark-grid-tables`, options: {} },
-          { resolve: `gatsby-remark-images`, options: {} },
-          { resolve: `gatsby-remark-katex`, options: {} },
-          { resolve: `gatsby-remark-prismjs`, options: {} },
+          { resolve: `gatsby-remark-grid-tables` },
+          { resolve: `gatsby-remark-images` },
+          { resolve: `gatsby-remark-katex` }
         ],
       },
     },
