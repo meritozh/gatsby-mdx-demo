@@ -5423,6 +5423,14 @@ gatsby-react-router-scroll@^2.0.2:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
+gatsby-remark-custom-blocks@^2.0.4:
+  version "2.0.4"
+  resolved "http://registry.npm.taobao.org/gatsby-remark-custom-blocks/download/gatsby-remark-custom-blocks-2.0.4.tgz#a1b76b8c48c1cc158c57719c172a35bf68124691"
+  integrity sha1-obdrjEjBzBWMV3GcFyo1v2gSRpE=
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    remark-custom-blocks "^2.1.2"
+
 gatsby-remark-grid-tables@^0.0.3:
   version "0.0.3"
   resolved "http://registry.npm.taobao.org/gatsby-remark-grid-tables/download/gatsby-remark-grid-tables-0.0.3.tgz#2ace558669360fe32aa5e29c17920db3d148436f"
@@ -10124,6 +10132,13 @@ remark-abbr@^1.2.3:
   dependencies:
     unist-util-visit "^1.3.1"
 
+remark-custom-blocks@^2.1.2:
+  version "2.3.1"
+  resolved "http://registry.npm.taobao.org/remark-custom-blocks/download/remark-custom-blocks-2.3.1.tgz#71ad7bcd8c34ab4ce58e25d81e28441405eabf37"
+  integrity sha1-ca17zYw0q0zljiXYHihEFAXqvzc=
+  dependencies:
+    space-separated-tokens "^1.1.1"
+
 remark-grid-tables@^1.2.0:
   version "1.3.0"
   resolved "http://registry.npm.taobao.org/remark-grid-tables/download/remark-grid-tables-1.3.0.tgz#b915d77335d2330c34349a7f9e994189fc6cf257"
@@ -10957,6 +10972,13 @@ sourcemap-codec@^1.4.1:
   version "1.4.4"
   resolved "http://registry.npm.taobao.org/sourcemap-codec/download/sourcemap-codec-1.4.4.tgz#c63ea927c029dd6bd9a2b7fa03b3fec02ad56e9f"
   integrity sha1-xj6pJ8Ap3WvZorf6A7P+wCrVbp8=
+
+space-separated-tokens@^1.1.1:
+  version "1.1.2"
+  resolved "http://registry.npm.taobao.org/space-separated-tokens/download/space-separated-tokens-1.1.2.tgz#e95ab9d19ae841e200808cd96bc7bd0adbbb3412"
+  integrity sha1-6Vq50ZroQeIAgIzZa8e9Ctu7NBI=
+  dependencies:
+    trim "0.0.1"
 
 spdx-correct@^3.0.0:
   version "3.1.0"

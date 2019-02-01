@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description:
+        `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -17,19 +18,29 @@ module.exports = {
         //   posts: require.resolve("./src/templates/post.tsx")
         // },
         gatsbyRemarkPlugins: [
-          { resolve: `gatsby-remark-grid-tables` },
-          { resolve: `gatsby-remark-images` },
-          { resolve: `gatsby-remark-katex` }
+          {
+            resolve: `gatsby-remark-custom-blocks`,
+            options: {
+              blocks: {
+                error: {classes: `error`, title: `optional`},
+                note: {classes: `note`, title: `optional`},
+                danger: {classes: `danger`, title: `optional`},
+                info: {classes: `info`, title: `optional`},
+                warning: {classes: `warning`, title: `optional`},
+                qa: {classes: `qa`, title: `optional`}
+              }
+            }
+          },
+          {resolve: `gatsby-remark-grid-tables`},
+          {resolve: `gatsby-remark-images`}, {resolve: `gatsby-remark-katex`}
         ],
       },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: { displayName: false },
+      options: {displayName: false},
     },
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-react-helmet`,
-    {
+    `gatsby-plugin-typescript`, `gatsby-plugin-react-helmet`, {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
@@ -43,9 +54,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
+    `gatsby-transformer-sharp`, `gatsby-plugin-sharp`, {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -54,7 +63,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the
+        icon: `src/images/gatsby-icon.png`,  // This path is relative to the
         // root of the site.
       },
     },
